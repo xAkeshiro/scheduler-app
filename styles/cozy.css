@@ -1,0 +1,198 @@
+/*
+ * Cozy Theme for Landing Page
+ *
+ * A warm, friendly aesthetic for the student scheduler landing page.
+ * Think "cozy study corner" not "enterprise software."
+ *
+ * Color Palette:
+ * - Background: #FDF6EC (warm cream)
+ * - Secondary bg: #F5EBE0 (soft beige)
+ * - Primary accent: #B8E0D2 (mint green)
+ * - Text primary: #5B4634 (warm brown)
+ * - Text secondary: #8B7355 (light brown)
+ * - Soft accents: #FFE8D6 (peach), #FFE066 (soft yellow), #FFB5A7 (coral)
+ */
+
+.cozy {
+  /* Core colors */
+  --cozy-cream: #FDF6EC;
+  --cozy-beige: #F5EBE0;
+  --cozy-mint: #B8E0D2;
+  --cozy-mint-dark: #9DD0BE;
+  --cozy-brown: #5B4634;
+  --cozy-brown-light: #8B7355;
+  --cozy-brown-muted: #A69583;
+
+  /* Accent colors */
+  --cozy-peach: #FFE8D6;
+  --cozy-yellow: #FFE066;
+  --cozy-coral: #FFB5A7;
+  --cozy-lavender: #E2D5F3;
+  --cozy-sky: #BDE0FE;
+
+  /* Schedule block colors */
+  --cozy-block-blue: #A8D5E5;
+  --cozy-block-green: #B8E0D2;
+  --cozy-block-purple: #D4C4E6;
+  --cozy-block-orange: #FFDAB3;
+  --cozy-block-pink: #FFCCD5;
+  --cozy-block-yellow: #FFF3B8;
+
+  /* Shadows */
+  --cozy-shadow-sm: 0 2px 8px rgba(91, 70, 52, 0.06);
+  --cozy-shadow-md: 0 4px 20px rgba(91, 70, 52, 0.08);
+  --cozy-shadow-lg: 0 8px 30px rgba(91, 70, 52, 0.1);
+
+  /* Borders */
+  --cozy-border: rgba(91, 70, 52, 0.1);
+  --cozy-border-strong: rgba(91, 70, 52, 0.15);
+
+  /* Border radius */
+  --cozy-radius-sm: 12px;
+  --cozy-radius-md: 16px;
+  --cozy-radius-lg: 24px;
+  --cozy-radius-xl: 32px;
+
+  /* Typography - Using system fonts with rounded, friendly characteristics */
+  --font-heading: 'Segoe UI', 'SF Pro Rounded', system-ui, -apple-system, sans-serif;
+  --font-body: 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', sans-serif;
+
+  /* Base styles */
+  background-color: var(--cozy-cream);
+  color: var(--cozy-brown);
+  font-family: var(--font-body);
+}
+
+/* Cozy typography */
+.cozy h1,
+.cozy h2,
+.cozy h3,
+.cozy h4,
+.cozy h5,
+.cozy h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--cozy-brown);
+}
+
+.cozy p,
+.cozy span,
+.cozy li {
+  font-family: var(--font-body);
+}
+
+/* Cozy button styles */
+.cozy-btn {
+  font-family: var(--font-body);
+  font-weight: 600;
+  border-radius: var(--cozy-radius-md);
+  transition: all 0.2s ease;
+}
+
+.cozy-btn-primary {
+  background-color: var(--cozy-mint);
+  color: var(--cozy-brown);
+  border: none;
+  box-shadow: var(--cozy-shadow-sm);
+}
+
+.cozy-btn-primary:hover {
+  background-color: var(--cozy-mint-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--cozy-shadow-md);
+}
+
+.cozy-btn-secondary {
+  background-color: transparent;
+  color: var(--cozy-brown);
+  border: 2px solid var(--cozy-border-strong);
+}
+
+.cozy-btn-secondary:hover {
+  background-color: var(--cozy-beige);
+  border-color: var(--cozy-brown-muted);
+}
+
+/* Cozy card styles */
+.cozy-card {
+  background-color: white;
+  border: 1px solid var(--cozy-border);
+  border-radius: var(--cozy-radius-lg);
+  box-shadow: var(--cozy-shadow-md);
+}
+
+/* Floating emoji animation */
+@keyframes float-gentle {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(3deg);
+  }
+}
+
+@keyframes float-gentle-alt {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-6px) rotate(-3deg);
+  }
+}
+
+@keyframes wiggle {
+  0%, 100% {
+    transform: rotate(-3deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+}
+
+.cozy-float {
+  animation: float-gentle 4s ease-in-out infinite;
+}
+
+.cozy-float-alt {
+  animation: float-gentle-alt 5s ease-in-out infinite;
+}
+
+.cozy-wiggle {
+  animation: wiggle 2s ease-in-out infinite;
+}
+
+/* Soft fade in */
+@keyframes cozy-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cozy-fade-in {
+  animation: cozy-fade-in 0.6s ease-out forwards;
+}
+
+.cozy-delay-1 {
+  animation-delay: 0.1s;
+  opacity: 0;
+}
+
+.cozy-delay-2 {
+  animation-delay: 0.2s;
+  opacity: 0;
+}
+
+.cozy-delay-3 {
+  animation-delay: 0.3s;
+  opacity: 0;
+}
+
+.cozy-delay-4 {
+  animation-delay: 0.4s;
+  opacity: 0;
+}
