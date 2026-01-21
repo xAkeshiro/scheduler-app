@@ -1,198 +1,188 @@
 /*
- * Cozy Theme for Landing Page
+ * Professional Theme for Landing Page
  *
- * A warm, friendly aesthetic for the student scheduler landing page.
- * Think "cozy study corner" not "enterprise software."
- *
- * Color Palette:
- * - Background: #FDF6EC (warm cream)
- * - Secondary bg: #F5EBE0 (soft beige)
- * - Primary accent: #B8E0D2 (mint green)
- * - Text primary: #5B4634 (warm brown)
- * - Text secondary: #8B7355 (light brown)
- * - Soft accents: #FFE8D6 (peach), #FFE066 (soft yellow), #FFB5A7 (coral)
+ * A clean, polished aesthetic with generous whitespace and neutral warmth.
+ * Design principles: Alignment, hierarchy, restraint, consistency.
  */
 
-.cozy {
-  /* Core colors */
-  --cozy-cream: #FDF6EC;
-  --cozy-beige: #F5EBE0;
-  --cozy-mint: #B8E0D2;
-  --cozy-mint-dark: #9DD0BE;
-  --cozy-brown: #5B4634;
-  --cozy-brown-light: #8B7355;
-  --cozy-brown-muted: #A69583;
+:root {
+  /* Color Palette - Neutral Warm */
+  --color-background: #FAFAF9;
+  --color-surface: #FFFFFF;
+  --color-surface-hover: #F5F5F4;
+  --color-border: #E7E5E4;
+  --color-border-hover: #D6D3D1;
+  --color-text-primary: #292524;
+  --color-text-secondary: #78716C;
+  --color-text-muted: #A8A29E;
+  --color-accent: #6EE7B7;
+  --color-accent-hover: #34D399;
+  --color-accent-subtle: #ECFDF5;
 
-  /* Accent colors */
-  --cozy-peach: #FFE8D6;
-  --cozy-yellow: #FFE066;
-  --cozy-coral: #FFB5A7;
-  --cozy-lavender: #E2D5F3;
-  --cozy-sky: #BDE0FE;
+  /* Schedule block colors (soft pastels) */
+  --class-green: #BBF7D0;
+  --class-purple: #DDD6FE;
+  --class-yellow: #FEF08A;
+  --class-orange: #FED7AA;
+  --class-pink: #FBCFE8;
+  --class-blue: #BFDBFE;
 
-  /* Schedule block colors */
-  --cozy-block-blue: #A8D5E5;
-  --cozy-block-green: #B8E0D2;
-  --cozy-block-purple: #D4C4E6;
-  --cozy-block-orange: #FFDAB3;
-  --cozy-block-pink: #FFCCD5;
-  --cozy-block-yellow: #FFF3B8;
+  /* Typography - System fonts approximating Outfit/DM Sans */
+  --font-display: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  --font-body: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
 
   /* Shadows */
-  --cozy-shadow-sm: 0 2px 8px rgba(91, 70, 52, 0.06);
-  --cozy-shadow-md: 0 4px 20px rgba(91, 70, 52, 0.08);
-  --cozy-shadow-lg: 0 8px 30px rgba(91, 70, 52, 0.1);
-
-  /* Borders */
-  --cozy-border: rgba(91, 70, 52, 0.1);
-  --cozy-border-strong: rgba(91, 70, 52, 0.15);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
 
   /* Border radius */
-  --cozy-radius-sm: 12px;
-  --cozy-radius-md: 16px;
-  --cozy-radius-lg: 24px;
-  --cozy-radius-xl: 32px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 24px;
+  --radius-full: 9999px;
+}
 
-  /* Typography - Using system fonts with rounded, friendly characteristics */
-  --font-heading: 'Segoe UI', 'SF Pro Rounded', system-ui, -apple-system, sans-serif;
-  --font-body: 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', sans-serif;
+/* Base page styles */
+.landing-page {
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  min-height: 100vh;
+}
 
-  /* Base styles */
-  background-color: var(--cozy-cream);
-  color: var(--cozy-brown);
+/* Typography */
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-body {
   font-family: var(--font-body);
 }
 
-/* Cozy typography */
-.cozy h1,
-.cozy h2,
-.cozy h3,
-.cozy h4,
-.cozy h5,
-.cozy h6 {
-  font-family: var(--font-heading);
-  font-weight: 600;
-  color: var(--cozy-brown);
+/* Navbar */
+.nav-link {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  transition: color 0.2s ease;
 }
 
-.cozy p,
-.cozy span,
-.cozy li {
-  font-family: var(--font-body);
+.nav-link:hover {
+  color: var(--color-text-primary);
 }
 
-/* Cozy button styles */
-.cozy-btn {
-  font-family: var(--font-body);
-  font-weight: 600;
-  border-radius: var(--cozy-radius-md);
+/* Buttons */
+.btn-primary {
+  background-color: var(--color-text-primary);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-full);
+  font-size: 0.875rem;
+  font-weight: 500;
   transition: all 0.2s ease;
 }
 
-.cozy-btn-primary {
-  background-color: var(--cozy-mint);
-  color: var(--cozy-brown);
-  border: none;
-  box-shadow: var(--cozy-shadow-sm);
+.btn-primary:hover {
+  background-color: #44403C;
+  transform: translateY(-1px);
 }
 
-.cozy-btn-primary:hover {
-  background-color: var(--cozy-mint-dark);
-  transform: translateY(-2px);
-  box-shadow: var(--cozy-shadow-md);
+.btn-accent {
+  background-color: var(--color-accent);
+  color: var(--color-text-primary);
+  padding: 0.875rem 1.75rem;
+  border-radius: var(--radius-full);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
 }
 
-.cozy-btn-secondary {
+.btn-accent:hover {
+  background-color: var(--color-accent-hover);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
   background-color: transparent;
-  color: var(--cozy-brown);
-  border: 2px solid var(--cozy-border-strong);
+  color: var(--color-text-secondary);
+  padding: 0.875rem 1.75rem;
+  border-radius: var(--radius-full);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  border: 1px solid var(--color-border);
+  transition: all 0.2s ease;
 }
 
-.cozy-btn-secondary:hover {
-  background-color: var(--cozy-beige);
-  border-color: var(--cozy-brown-muted);
+.btn-secondary:hover {
+  border-color: var(--color-border-hover);
+  color: var(--color-text-primary);
 }
 
-/* Cozy card styles */
-.cozy-card {
-  background-color: white;
-  border: 1px solid var(--cozy-border);
-  border-radius: var(--cozy-radius-lg);
-  box-shadow: var(--cozy-shadow-md);
+/* Cards */
+.card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  transition: all 0.2s ease;
 }
 
-/* Floating emoji animation */
-@keyframes float-gentle {
-  0%, 100% {
-    transform: translateY(0) rotate(0deg);
+.card:hover {
+  border-color: var(--color-border-hover);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Schedule preview card */
+.schedule-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Class blocks */
+.class-block {
+  border-radius: var(--radius-lg);
+  padding: 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* Icon container */
+.icon-container {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--radius-lg);
+  background-color: var(--color-accent-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #059669;
+}
+
+/* Section spacing */
+.section-spacing {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+@media (min-width: 1024px) {
+  .section-spacing {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
   }
-  50% {
-    transform: translateY(-8px) rotate(3deg);
+}
+
+/* Container */
+.container-main {
+  max-width: 64rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .container-main {
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
-}
-
-@keyframes float-gentle-alt {
-  0%, 100% {
-    transform: translateY(0) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-6px) rotate(-3deg);
-  }
-}
-
-@keyframes wiggle {
-  0%, 100% {
-    transform: rotate(-3deg);
-  }
-  50% {
-    transform: rotate(3deg);
-  }
-}
-
-.cozy-float {
-  animation: float-gentle 4s ease-in-out infinite;
-}
-
-.cozy-float-alt {
-  animation: float-gentle-alt 5s ease-in-out infinite;
-}
-
-.cozy-wiggle {
-  animation: wiggle 2s ease-in-out infinite;
-}
-
-/* Soft fade in */
-@keyframes cozy-fade-in {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.cozy-fade-in {
-  animation: cozy-fade-in 0.6s ease-out forwards;
-}
-
-.cozy-delay-1 {
-  animation-delay: 0.1s;
-  opacity: 0;
-}
-
-.cozy-delay-2 {
-  animation-delay: 0.2s;
-  opacity: 0;
-}
-
-.cozy-delay-3 {
-  animation-delay: 0.3s;
-  opacity: 0;
-}
-
-.cozy-delay-4 {
-  animation-delay: 0.4s;
-  opacity: 0;
 }
